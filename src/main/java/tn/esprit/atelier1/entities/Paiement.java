@@ -1,5 +1,6 @@
 package tn.esprit.atelier1.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,6 +25,7 @@ public class Paiement {
     @Enumerated(EnumType.STRING)
     private ModePaiement modePaiement;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "contrat_id")
     private Contrat contrat;

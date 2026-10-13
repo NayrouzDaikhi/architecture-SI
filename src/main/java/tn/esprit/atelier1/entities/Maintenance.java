@@ -1,5 +1,6 @@
 package tn.esprit.atelier1.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class Maintenance {
     private LocalDate dateFin;
     private String description;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "vehicule_id")
     private Vehicule vehicule;
